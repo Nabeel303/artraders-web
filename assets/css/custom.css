@@ -1,0 +1,643 @@
+/* ==============================================================
+   AR TRADERS DXP — component classes
+   Kept deliberately small. Tailwind utilities do the heavy
+   lifting; these classes exist so repeated components (buttons,
+   nav links, stat cards) have ONE definition across all pages.
+   ============================================================== */
+
+/* ---------- Buttons [c-btn] ---------- */
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;              /* rounded corners per design system */
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;                /* 15px */
+  font-weight: 700;
+  line-height: 1;
+  transition: background-color 250ms ease, color 250ms ease,
+              border-color 250ms ease;
+}
+.c-btn--primary {
+  background-color: #006B3F;
+  color: #FFFFFF;
+}
+.c-btn--primary:hover  { background-color: #00552F; }
+.c-btn--secondary {
+  background-color: transparent;
+  color: #2D3436;
+  border: 1.5px solid #D9DDE1;
+}
+.c-btn--secondary:hover { border-color: #006B3F; color: #006B3F; }
+.c-btn:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 2px;
+}
+
+/* ---------- Desktop nav links [c-navlink] ---------- */
+.c-navlink {
+  color: #2D3436;
+  white-space: nowrap;                 /* QA-001: labels never wrap  */
+  transition: color 250ms ease;
+}
+.c-navlink:hover,
+.c-navlink[aria-current="page"] { color: #006B3F; }
+.c-navlink:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ---------- Mobile menu links [c-mobile-link] ---------- */
+.c-mobile-link {
+  display: block;
+  padding: 0.875rem 0.25rem;
+  border-radius: 0.5rem;
+  color: #2D3436;
+}
+.c-mobile-link:hover,
+.c-mobile-link[aria-current="page"] { color: #006B3F; }
+.c-mobile-link:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 2px;
+}
+
+/* ---------- Header scroll state ---------- */
+/* Toggled by main.js. Transparent over hero → white surface.   */
+#site-header.is-scrolled {
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 0 rgba(45, 52, 54, 0.08);
+}
+
+/* ---------- Stat cards [c-stat-card] ---------- */
+.c-stat-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(45, 52, 54, 0.08);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.c-stat-card__value {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #006B3F;
+  line-height: 1.1;
+}
+.c-stat-card__unit {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-stat-card__label {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(45, 52, 54, 0.65);
+}
+
+/* ==============================================================
+   DDS-002 components
+   ============================================================== */
+
+/* ---------- Section typography [c-eyebrow / c-section-*] ---------- */
+.c-eyebrow {
+  font-size: 0.8125rem;                 /* 13px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #006B3F;
+}
+.c-section-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #2D3436;
+}
+.c-section-intro {
+  margin-top: 1.25rem;
+  font-size: 1.0625rem;                 /* 17px */
+  line-height: 1.7;
+  color: rgba(45, 52, 54, 0.68);
+}
+
+/* ---------- Content cards [c-card] ---------- */
+/* Base card used by both capability (§2) and solution (§3) grids.
+   White surface, hairline border, subtle hover only.             */
+.c-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(45, 52, 54, 0.10);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: border-color 250ms ease;
+}
+.c-card:hover { border-color: rgba(0, 107, 63, 0.45); }
+.c-card__title {
+  margin-top: 1.375rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #2D3436;
+}
+.c-card__body {
+  margin-top: 0.625rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(45, 52, 54, 0.68);
+}
+
+/* Solution-card modifier: equal heights + bottom-anchored link */
+.c-card--solution .c-card__body { flex: 1 1 auto; }
+.c-card__link {
+  margin-top: 1.375rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #006B3F;
+  transition: color 250ms ease;
+}
+.c-card__link:hover { color: #00552F; text-decoration: underline; text-underline-offset: 3px; }
+.c-card__link:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Icon tile [c-icon-tile] ---------- */
+.c-icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background-color: rgba(0, 107, 63, 0.07);
+  color: #006B3F;
+  transition: background-color 250ms ease;
+}
+.c-icon-tile svg { width: 1.5rem; height: 1.5rem; }
+.c-card:hover .c-icon-tile { background-color: rgba(0, 107, 63, 0.12); }
+
+/* ---------- Portfolio badge [c-badge] ---------- */
+/* Marks Expanding / Future-Focused portfolios without looking
+   disabled — same hierarchy as product lists, quietly branded.  */
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3125rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 107, 63, 0.07);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #006B3F;
+}
+
+/* ==============================================================
+   DDS-003 components
+   ============================================================== */
+
+/* ---------- Dark-section variants ---------- */
+.c-eyebrow.c-eyebrow--gold        { color: #C9A227; }
+.c-section-title.c-section-title--light { color: #FFFFFF; }
+.c-section-intro.c-section-intro--light { color: rgba(255, 255, 255, 0.72); }
+
+/* ---------- Buttons on dark green ---------- */
+.c-btn.c-btn--inverse {
+  background-color: #FFFFFF;
+  color: #004D2E;
+}
+.c-btn.c-btn--inverse:hover { background-color: #EAF3EE; }
+.c-btn.c-btn--ghost {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+.c-btn.c-btn--ghost:hover { border-color: #FFFFFF; }
+.c-btn.c-btn--inverse:focus-visible,
+.c-btn.c-btn--ghost:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+/* ---------- Checklist items [c-check] ---------- */
+.c-check {
+  position: relative;
+  padding-left: 1.875rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(45, 52, 54, 0.8);
+}
+.c-check::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 107, 63, 0.10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23006B3F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5 10 16.5 18 8'/%3E%3C/svg%3E");
+  background-size: 0.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.c-check.c-check--light { color: rgba(255, 255, 255, 0.85); }
+.c-check.c-check--light::before {
+  background-color: rgba(255, 255, 255, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5 10 16.5 18 8'/%3E%3C/svg%3E");
+}
+
+/* ---------- Sustainability pillars [c-pillar] ---------- */
+.c-pillar {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.c-pillar__label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-icon-tile.c-icon-tile--sm {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  background-color: rgba(0, 107, 63, 0.09);
+}
+.c-icon-tile.c-icon-tile--sm svg { width: 1.25rem; height: 1.25rem; }
+
+/* ---------- Badge size variant ---------- */
+.c-badge.c-badge--lg {
+  padding: 0.5rem 1.125rem;
+  font-size: 0.9375rem;
+}
+
+/* ---------- Footer [c-footer-*] ---------- */
+.c-footer-heading {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #2D3436;
+}
+.c-footer-link {
+  font-size: 0.875rem;
+  color: rgba(45, 52, 54, 0.62);
+  transition: color 250ms ease;
+}
+.c-footer-link:hover { color: #006B3F; }
+.c-footer-link:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ==============================================================
+   DDS-004 — internal page template components
+   ============================================================== */
+
+/* ---------- Page hero [c-page-hero] ---------- */
+.c-page-hero {
+  position: relative;
+  background-color: #004D2E;        /* fallback while image loads */
+  background-size: cover;
+  background-position: center;
+}
+.c-page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 27, 20, 0.62);   /* dark overlay, no gradient */
+}
+
+/* ---------- Breadcrumb [c-breadcrumb] ---------- */
+.c-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;                     /* QA-001: no 320px overflow  */
+  align-items: center;
+  gap: 0.625rem;
+  row-gap: 0.25rem;
+  padding: 0.875rem 0;
+  font-size: 0.8125rem;
+}
+.c-breadcrumb__link {
+  color: rgba(45, 52, 54, 0.55);
+  transition: color 250ms ease;
+}
+.c-breadcrumb__link:hover { color: #006B3F; }
+.c-breadcrumb__link:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.c-breadcrumb__sep     { color: rgba(45, 52, 54, 0.35); }
+.c-breadcrumb__current { font-weight: 600; color: #2D3436; }
+
+/* ---------- Long-form content [c-prose] ---------- */
+/* One class styles everything inside the 900px content column. */
+.c-prose {
+  max-width: 900px;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgba(45, 52, 54, 0.78);
+}
+.c-prose h2 {
+  margin-top: 2.75rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #2D3436;
+}
+.c-prose h3 {
+  margin-top: 2.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #2D3436;
+}
+.c-prose h2:first-child,
+.c-prose h3:first-child { margin-top: 0; }
+.c-prose p  { margin-top: 1.25rem; }
+.c-prose ul,
+.c-prose ol { margin-top: 1.25rem; padding-left: 1.5rem; }
+.c-prose ul { list-style: disc; }
+.c-prose ol { list-style: decimal; }
+.c-prose li { margin-top: 0.5rem; padding-left: 0.25rem; }
+.c-prose li::marker { color: #006B3F; }
+.c-prose blockquote {
+  margin-top: 1.75rem;
+  border-left: 3px solid #006B3F;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2D3436;
+}
+.c-prose table {
+  margin-top: 1.75rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.c-prose th {
+  border-bottom: 2px solid rgba(45, 52, 54, 0.15);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-prose td {
+  border-bottom: 1px solid rgba(45, 52, 54, 0.10);
+  padding: 0.75rem 1rem;
+}
+.c-prose figure     { margin-top: 2rem; }
+.c-prose img        { border-radius: 1rem; width: 100%; }
+.c-prose figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(45, 52, 54, 0.55);
+}
+
+/* ---------- Timeline [c-timeline] ---------- */
+.c-timeline { position: relative; }
+.c-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.4375rem;
+  top: 0.375rem;
+  bottom: 0.375rem;
+  width: 2px;
+  background-color: rgba(0, 107, 63, 0.18);
+}
+.c-timeline__item {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.c-timeline__item:last-child { padding-bottom: 0; }
+.c-timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.375rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 3px solid #006B3F;
+}
+.c-timeline__marker {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #006B3F;
+}
+.c-timeline__title {
+  margin-top: 0.375rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-timeline__body {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(45, 52, 54, 0.68);
+}
+
+/* ---------- Quote block [c-quote] ---------- */
+.c-quote {
+  max-width: 900px;
+  border-left: 3px solid #006B3F;
+  padding-left: 2rem;
+}
+.c-quote blockquote p {
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  color: #2D3436;
+}
+.c-quote figcaption {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(45, 52, 54, 0.55);
+}
+
+/* ---------- Callout box [c-callout] ---------- */
+.c-callout {
+  max-width: 900px;
+  border: 1px solid rgba(0, 107, 63, 0.25);
+  border-left: 4px solid #006B3F;
+  border-radius: 1rem;
+  background-color: rgba(0, 107, 63, 0.04);
+  padding: 1.75rem 2rem;
+}
+.c-callout__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-callout__body {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(45, 52, 54, 0.72);
+}
+
+/* ==============================================================
+   DDS-007 — supply chain process flow [c-steps]
+   Vertical connected steps on mobile; five horizontal connected
+   steps from 1024px. Thin line, no animation.
+   ============================================================== */
+.c-steps {
+  display: flex;
+  flex-direction: column;
+}
+.c-step {
+  position: relative;
+  display: flex;
+  gap: 1.125rem;
+  padding-bottom: 2.25rem;
+}
+.c-step:last-child { padding-bottom: 0; }
+/* Vertical connector (mobile/tablet) */
+.c-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 1.4375rem;                       /* centre of 3rem icon tile */
+  top: 3.375rem;
+  bottom: 0.375rem;
+  width: 2px;
+  background-color: rgba(0, 107, 63, 0.18);
+}
+.c-step__icon { flex-shrink: 0; }
+.c-step__marker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #006B3F;
+}
+.c-step__title {
+  margin-top: 0.25rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #2D3436;
+}
+.c-step__body {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(45, 52, 54, 0.68);
+}
+
+@media (min-width: 1024px) {
+  .c-steps {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .c-step {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  /* Horizontal connector between icon tiles */
+  .c-step:not(:last-child)::before {
+    left: calc(50% + 2.125rem);
+    right: auto;
+    top: 1.4375rem;                      /* centre of icon tile   */
+    bottom: auto;
+    width: calc(100% - 4.25rem);
+    height: 2px;
+  }
+  .c-step__content { margin-top: 1.125rem; }
+}
+
+/* ==============================================================
+   DDS-008 — contact cards
+   ============================================================== */
+
+/* Row-layout card modifier: small icon left, content right.
+   Reusable anywhere a compact labelled card is needed.          */
+.c-card.c-card--row {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.c-contact-card__label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #006B3F;
+}
+.c-contact-card__value {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(45, 52, 54, 0.75);
+}
+.c-contact-card__link {
+  font-weight: 600;
+  color: #2D3436;
+  transition: color 250ms ease;
+}
+.c-contact-card__link:hover { color: #006B3F; }
+.c-contact-card__link:focus-visible {
+  outline: 2px solid #006B3F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Card meta block: small labelled footer inside a card (e.g.
+   "Current Portfolio" product lists) — subordinate to the body.  */
+.c-card__meta {
+  margin-top: 1.125rem;
+  border-top: 1px solid rgba(45, 52, 54, 0.08);
+  padding-top: 1rem;
+}
+.c-card__meta-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(45, 52, 54, 0.5);
+}
+.c-card__meta-value {
+  margin-top: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: rgba(45, 52, 54, 0.7);
+}
+
+/* ==============================================================
+   DDS-015 — fixed-header anchor visibility
+   Scoped to the three contractual anchors only. Header is 5rem
+   tall; 6.5rem leaves 1.5rem breathing room above the heading.
+   scroll-margin affects scroll landing only, not visual spacing.
+   ============================================================== */
+#specialty,
+#organic-bio,
+#customized {
+  scroll-margin-top: 6.5rem;
+}
+
+/* ---------- Scroll lock while mobile menu is open ---------- */
+body.menu-open { overflow: hidden; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.artraders.net.pk/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions-nitrogen.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions-phosphate.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions-potassium.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions-secondary-nutrients.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/solutions-micronutrients.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/advanced-crop-nutrition.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/global-partnerships.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/distribution-network.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.artraders.net.pk/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>https://www.artraders.net.pk/privacy-policy.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+</url>
+
+<url>
+    <loc>https://www.artraders.net.pk/terms-of-use.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+
+</url>
+
+</urlset>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | AR Traders</title>
+  <meta name="description" content="Read the AR Traders Privacy Policy explaining how website and business enquiry information may be collected, used, protected, and shared." />
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="https://www.artraders.net.pk/privacy-policy.html" />
+
+<meta name="theme-color" content="#006B3F" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Privacy Policy | AR Traders" />
+<meta property="og:description" content="Learn how AR Traders handles information submitted through its corporate website and business enquiry channels." />
+<meta property="og:url" content="https://www.artraders.net.pk/privacy-policy.html" />
+<meta property="og:site_name" content="AR Traders" />
+<meta property="og:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy Policy | AR Traders" />
+<meta name="twitter:description" content="Learn how AR Traders handles information submitted through its corporate website and business enquiry channels." />
+<meta name="twitter:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+  <!-- ============================================================
+       DESIGN SYSTEM — FONTS
+       Display + body: Manrope (per DDS-001)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       TAILWIND CSS (Play CDN — V1 only, see Developer Notes)
+       ============================================================ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* ----------------------------------------------------------
+       DESIGN SYSTEM — TOKENS (single source of truth)
+       Colors, fonts and spacing defined once, reused everywhere.
+       ---------------------------------------------------------- */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:       '#006B3F',  /* Primary Green           */
+            'brand-deep':'#004D2E',  /* Dark green sections     */
+            surface:     '#F7F8F9',  /* Light Grey              */
+            ink:         '#2D3436',  /* Dark Charcoal           */
+            gold:        '#C9A227'   /* Accent Gold             */
+          },
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          maxWidth: {
+            site: '80rem'         /* 1280px content width */
+          },
+          transitionDuration: {
+            250: '250ms'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Project styles (small; utilities cover almost everything) -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <!-- ============================================================
+       COMPONENT: SITE HEADER  [c-header]
+       Sticky. Transparent over Hero → white after scroll (250ms).
+       Scroll state is toggled by main.js via .is-scrolled
+       ============================================================ -->
+  <header id="site-header"
+          class="fixed inset-x-0 top-0 z-50 transition-colors duration-250 bg-transparent"
+          data-solid
+          data-component="c-header">
+    <div class="mx-auto max-w-site px-6 lg:px-10">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <!-- Logo mark placeholder (replace with SVG logo asset) -->
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold tracking-tight">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+
+        <!-- Desktop menu (true-centered) -->
+        <nav class="absolute left-1/2 hidden -translate-x-1/2 xl:block" aria-label="Primary">
+          <ul class="flex items-center gap-8 text-[15px] font-medium">
+            <li><a href="index.html"                class="c-navlink">Home</a></li>
+            <li><a href="about.html"                class="c-navlink">About</a></li>
+            <li><a href="solutions.html"            class="c-navlink">Our Solutions</a></li>
+            <li><a href="global-partnerships.html"  class="c-navlink">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-navlink">Distribution Network</a></li>
+            <li><a href="contact.html"              class="c-navlink">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden xl:block">
+          <a href="contact.html" class="c-btn c-btn--primary">Request a Quote</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-open"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg xl:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       COMPONENT: MOBILE MENU  [c-mobile-menu]
+       Fullscreen slide-in panel. CTA pinned to bottom.
+       ============================================================ -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-[60] translate-x-full bg-white transition-transform duration-250 xl:hidden"
+       role="dialog" aria-modal="true" aria-label="Menu" inert
+       data-component="c-mobile-menu">
+    <div class="flex h-full flex-col px-6 pb-8 pt-0">
+
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+        <button id="menu-close"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex-1 overflow-y-auto" aria-label="Primary mobile">
+        <ul class="space-y-1 text-xl font-semibold">
+          <li><a href="index.html"                class="c-mobile-link">Home</a></li>
+          <li><a href="about.html"                class="c-mobile-link">About</a></li>
+          <li><a href="solutions.html"            class="c-mobile-link">Our Solutions</a></li>
+          <li><a href="global-partnerships.html"  class="c-mobile-link">Global Partnerships</a></li>
+          <li><a href="distribution-network.html" class="c-mobile-link">Distribution Network</a></li>
+          <li><a href="contact.html"              class="c-mobile-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA pinned at bottom per DDS -->
+      <a href="contact.html" class="c-btn c-btn--primary w-full justify-center text-base">Request a Quote</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="c-page-hero" data-component="c-page-hero"
+             style="background-image: url('assets/img/about-hero.webp')">
+      <div class="c-page-hero__overlay" aria-hidden="true"></div>
+      <div class="relative mx-auto flex min-h-[35vh] max-w-site flex-col justify-center px-6 pb-14 pt-32 md:min-h-[40vh] lg:min-h-[45vh] lg:px-10 lg:pb-16">
+        <p class="c-eyebrow c-eyebrow--gold">Legal & Privacy</p>
+        <h1 class="mt-3 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl">Privacy Policy</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">How AR Traders collects, uses, safeguards, and manages information provided through our corporate website.</p>
+      </div>
+    </section>
+
+    <nav class="border-b border-ink/10 bg-white" aria-label="Breadcrumb" data-component="c-breadcrumb">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <ol class="c-breadcrumb">
+          <li><a href="index.html" class="c-breadcrumb__link">Home</a></li>
+          <li aria-hidden="true" class="c-breadcrumb__sep">›</li>
+          <li><span class="c-breadcrumb__current" aria-current="page">Privacy Policy</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="bg-white">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <article class="mx-auto max-w-4xl">
+          <div class="mb-10 rounded-2xl border border-ink/10 bg-surface p-6 sm:p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand">Effective date</p>
+            <p class="mt-2 text-lg font-semibold text-ink">14 July 2026</p>
+          </div>
+          <div class="c-prose max-w-none">
+            
+<h2>1. Introduction</h2>
+<p>AR Traders (“AR Traders,” “we,” “our,” or “us”) respects the privacy of visitors to <strong>www.artraders.net.pk</strong>. This Privacy Policy explains what information we may collect through the website, how we use it, when it may be shared, and the choices available to website visitors.</p>
+<p>By using this website or submitting information through it, you acknowledge the practices described in this Privacy Policy.</p>
+
+<h2>2. Information We May Collect</h2>
+<p>We may collect information you voluntarily provide when you contact us, request information, or submit a business enquiry. This may include:</p>
+<ul>
+  <li>Your name and job title</li>
+  <li>Company or organization name</li>
+  <li>Email address and telephone number</li>
+  <li>Country, city, or business location</li>
+  <li>Product interests and enquiry details</li>
+  <li>Any other information included in your message</li>
+</ul>
+<p>We may also receive limited technical information automatically when you visit the website, such as your IP address, browser type, device type, operating system, referring page, pages viewed, and approximate access time.</p>
+
+<h2>3. How We Use Information</h2>
+<p>We may use information collected through the website to:</p>
+<ul>
+  <li>Respond to enquiries, requests, and business communications</li>
+  <li>Provide information about products, distribution, sourcing, or partnership opportunities</li>
+  <li>Evaluate potential customers, suppliers, manufacturers, distributors, or business partners</li>
+  <li>Operate, secure, maintain, and improve the website</li>
+  <li>Understand website traffic and user interaction</li>
+  <li>Prevent misuse, fraud, or security incidents</li>
+  <li>Meet applicable legal, regulatory, accounting, or compliance requirements</li>
+</ul>
+
+<h2>4. Legal and Business Basis for Processing</h2>
+<p>We process information where it is reasonably necessary to respond to your request, pursue legitimate business interests, perform or prepare for a business relationship, protect our systems and rights, or comply with applicable obligations.</p>
+
+<h2>5. Cookies and Similar Technologies</h2>
+<p>The website may use cookies or similar technologies for essential functionality, security, traffic analysis, and performance measurement. Cookies are small files placed on a device by a website.</p>
+<p>You may control or disable cookies through your browser settings. Disabling certain cookies may affect how some website features operate.</p>
+
+<h2>6. Analytics, Maps, Hosting, and Other Service Providers</h2>
+<p>We may use third-party service providers for website hosting, analytics, security, maps, content delivery, email handling, or related technical functions. These providers may process limited information on our behalf and may operate under their own privacy terms.</p>
+<p>Where third-party tools are used, their collection and use of information are governed by their respective policies and service terms.</p>
+
+<h2>7. How We Share Information</h2>
+<p>AR Traders does not sell or rent personal information. We may share information only where reasonably necessary:</p>
+<ul>
+  <li>With service providers supporting website or business operations</li>
+  <li>With professional advisers, auditors, or consultants</li>
+  <li>With affiliated business parties where required to evaluate or fulfil a legitimate enquiry</li>
+  <li>To comply with law, regulation, court order, or lawful governmental request</li>
+  <li>To protect the rights, property, security, or legitimate interests of AR Traders or others</li>
+  <li>In connection with a business restructuring, transfer, merger, or similar transaction</li>
+</ul>
+
+<h2>8. International Communications and Transfers</h2>
+<p>AR Traders works with customers, suppliers, manufacturers, and potential partners in Pakistan and other countries. Information submitted through the website may therefore be communicated to or processed in another jurisdiction when reasonably necessary for a legitimate business purpose.</p>
+
+<h2>9. Data Retention</h2>
+<p>We retain information only for as long as reasonably necessary for the purpose for which it was collected, including follow-up on business enquiries, recordkeeping, dispute resolution, security, and legal or compliance requirements.</p>
+
+<h2>10. Data Security</h2>
+<p>We use reasonable administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure. However, no website, internet transmission, or electronic storage system can be guaranteed to be completely secure.</p>
+
+<h2>11. Your Choices and Requests</h2>
+<p>You may contact us to request access to, correction of, or deletion of personal information you have submitted through the website, subject to identity verification and any applicable legal, contractual, or recordkeeping requirements.</p>
+<p>You may also ask us to stop using your contact details for non-essential business communications.</p>
+
+<h2>12. Third-Party Links</h2>
+<p>The website may contain links to third-party websites or services. AR Traders is not responsible for the content, security, availability, or privacy practices of those third parties. We encourage visitors to review the relevant third-party policies before providing information.</p>
+
+<h2>13. Children’s Privacy</h2>
+<p>This website is intended for business and professional audiences. It is not directed to children, and we do not knowingly seek to collect personal information from children through the website.</p>
+
+<h2>14. Changes to This Privacy Policy</h2>
+<p>We may revise this Privacy Policy periodically to reflect changes in our website, business practices, technology, or applicable requirements. The updated version will be posted on this page with a revised effective date.</p>
+
+          </div>
+          <div class="mt-12 rounded-2xl border border-brand/15 bg-brand/5 p-6 sm:p-8">
+            <h2 class="text-2xl font-bold tracking-tight text-ink">Contact AR Traders</h2>
+            <p class="mt-3 leading-relaxed text-ink/70">Questions about this page may be sent to:</p>
+            <address class="mt-4 space-y-2 not-italic text-ink/75">
+              <p><strong>AR Traders</strong></p>
+              <p>1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+              <p>Email: <a class="font-semibold text-brand hover:underline" href="mailto:info@artraders.net.pk">info@artraders.net.pk</a></p>
+              <p>Website: <a class="font-semibold text-brand hover:underline" href="https://www.artraders.net.pk">www.artraders.net.pk</a></p>
+            </address>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       COMPONENT: SITE FOOTER  [c-footer]  (DDS-003 §7)
+       Four columns + bottom bar. Reused on every page (Option A).
+       ============================================================ -->
+  <footer class="bg-white" data-component="c-footer">
+    <div class="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10 lg:pt-20">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr] lg:gap-12">
+
+        <!-- Column 1: Company -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-extrabold text-white">AR</span>
+            <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+          </a>
+          <p class="mt-4 text-sm font-semibold text-ink/80">Agricultural Inputs &amp; Supply Chain Company</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-ink/60">Reliable Crop Nutrition for Pakistan's Farming Heartland</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <nav aria-label="Footer — Quick links">
+          <h3 class="c-footer-heading">Quick Links</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="index.html" class="c-footer-link">Home</a></li>
+            <li><a href="about.html" class="c-footer-link">About</a></li>
+            <li><a href="solutions.html" class="c-footer-link">Our Solutions</a></li>
+            <li><a href="global-partnerships.html" class="c-footer-link">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-footer-link">Distribution Network</a></li>
+            <li><a href="contact.html" class="c-footer-link">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: Solutions -->
+        <nav aria-label="Footer — Solutions">
+          <h3 class="c-footer-heading">Solutions</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="solutions-nitrogen.html" class="c-footer-link">Nitrogen Solutions</a></li>
+            <li><a href="solutions-phosphate.html" class="c-footer-link">Phosphate Solutions</a></li>
+            <li><a href="solutions-potassium.html" class="c-footer-link">Potassium Solutions</a></li>
+            <li><a href="solutions-secondary-nutrients.html" class="c-footer-link">Secondary Nutrient Solutions</a></li>
+            <li><a href="solutions-micronutrients.html" class="c-footer-link">Micronutrient Solutions</a></li>
+            <li><a href="advanced-crop-nutrition.html" class="c-footer-link">Advanced Crop Nutrition</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h3 class="c-footer-heading">Contact</h3>
+          <address class="mt-4 space-y-2.5 not-italic">
+            <p class="text-sm leading-relaxed text-ink/60">1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+            <p><a href="tel:+924237898519" class="c-footer-link">+92 42 3789 8519</a></p>
+            <p class="text-sm text-ink/60">+92 320 888 9070–76</p>
+            <p><a href="mailto:info@artraders.net.pk" class="c-footer-link">info@artraders.net.pk</a></p>
+            <p><a href="https://www.artraders.net.pk" class="c-footer-link">www.artraders.net.pk</a></p>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row">
+        <p class="text-sm text-ink/55">Copyright &copy; AR Traders</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="c-footer-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="c-footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

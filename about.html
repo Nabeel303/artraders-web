@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About AR Traders | Agricultural Inputs &amp; Supply Chain Company Pakistan</title>
+  <meta name="description" content="Learn about AR Traders, its journey, purpose, leadership, values, and commitment to strengthening Pakistan's agricultural supply chain." />
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="https://www.artraders.net.pk/about.html" />
+
+<meta name="theme-color" content="#006B3F" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="About AR Traders | Agricultural Inputs & Supply Chain Company" />
+<meta property="og:description" content="Learn about AR Traders, our journey, leadership, values, and commitment to strengthening Pakistan's agricultural supply chain through trusted partnerships and sustainable growth." />
+<meta property="og:url" content="https://www.artraders.net.pk/about.html" />
+<meta property="og:site_name" content="AR Traders" />
+<meta property="og:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About AR Traders | Agricultural Inputs & Supply Chain Company" />
+<meta name="twitter:description" content="Learn about AR Traders, our journey, leadership, values, and commitment to Pakistan's agricultural future." />
+<meta name="twitter:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+  <!-- ============================================================
+       DESIGN SYSTEM — FONTS
+       Display + body: Manrope (per DDS-001)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       TAILWIND CSS (Play CDN — V1 only, see Developer Notes)
+       ============================================================ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* ----------------------------------------------------------
+       DESIGN SYSTEM — TOKENS (single source of truth)
+       Colors, fonts and spacing defined once, reused everywhere.
+       ---------------------------------------------------------- */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:       '#006B3F',  /* Primary Green           */
+            'brand-deep':'#004D2E',  /* Dark green sections     */
+            surface:     '#F7F8F9',  /* Light Grey              */
+            ink:         '#2D3436',  /* Dark Charcoal           */
+            gold:        '#C9A227'   /* Accent Gold             */
+          },
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          maxWidth: {
+            site: '80rem'         /* 1280px content width */
+          },
+          transitionDuration: {
+            250: '250ms'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Project styles (small; utilities cover almost everything) -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <!-- ============================================================
+       COMPONENT: SITE HEADER  [c-header]
+       Sticky. Transparent over Hero → white after scroll (250ms).
+       Scroll state is toggled by main.js via .is-scrolled
+       ============================================================ -->
+  <header id="site-header"
+          class="fixed inset-x-0 top-0 z-50 transition-colors duration-250 bg-transparent"
+          data-solid
+          data-component="c-header">
+    <div class="mx-auto max-w-site px-6 lg:px-10">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <!-- Logo mark placeholder (replace with SVG logo asset) -->
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold tracking-tight">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+
+        <!-- Desktop menu (true-centered) -->
+        <nav class="absolute left-1/2 hidden -translate-x-1/2 xl:block" aria-label="Primary">
+          <ul class="flex items-center gap-8 text-[15px] font-medium">
+            <li><a href="index.html"                class="c-navlink">Home</a></li>
+            <li><a href="about.html"                class="c-navlink" aria-current="page">About</a></li>
+            <li><a href="solutions.html"            class="c-navlink">Our Solutions</a></li>
+            <li><a href="global-partnerships.html"  class="c-navlink">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-navlink">Distribution Network</a></li>
+            <li><a href="contact.html"              class="c-navlink">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden xl:block">
+          <a href="contact.html" class="c-btn c-btn--primary">Request a Quote</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-open"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg xl:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       COMPONENT: MOBILE MENU  [c-mobile-menu]
+       Fullscreen slide-in panel. CTA pinned to bottom.
+       ============================================================ -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-[60] translate-x-full bg-white transition-transform duration-250 xl:hidden"
+       role="dialog" aria-modal="true" aria-label="Menu" inert
+       data-component="c-mobile-menu">
+    <div class="flex h-full flex-col px-6 pb-8 pt-0">
+
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+        <button id="menu-close"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex-1 overflow-y-auto" aria-label="Primary mobile">
+        <ul class="space-y-1 text-xl font-semibold">
+          <li><a href="index.html"                class="c-mobile-link">Home</a></li>
+          <li><a href="about.html"                class="c-mobile-link" aria-current="page">About</a></li>
+          <li><a href="solutions.html"            class="c-mobile-link">Our Solutions</a></li>
+          <li><a href="global-partnerships.html"  class="c-mobile-link">Global Partnerships</a></li>
+          <li><a href="distribution-network.html" class="c-mobile-link">Distribution Network</a></li>
+          <li><a href="contact.html"              class="c-mobile-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA pinned at bottom per DDS -->
+      <a href="contact.html" class="c-btn c-btn--primary w-full justify-center text-base">Request a Quote</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ==========================================================
+         PAGE HERO  [c-page-hero]  (DDS-005 §1)
+         ========================================================== -->
+    <section class="c-page-hero" data-component="c-page-hero"
+             style="background-image: url('assets/img/about-hero.webp')">
+      <div class="c-page-hero__overlay" aria-hidden="true"></div>
+      <div class="relative mx-auto flex min-h-[35vh] max-w-site flex-col justify-center px-6 pb-14 pt-32 md:min-h-[40vh] lg:min-h-[45vh] lg:px-10 lg:pb-16">
+        <p class="c-eyebrow c-eyebrow--gold">About AR Traders</p>
+        <h1 class="mt-3 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl">Building Stronger Agriculture Through Trusted Partnerships</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">AR Traders is a modern Agricultural Inputs &amp; Supply Chain Company connecting trusted manufacturers, dealers, distributors, and farming communities through reliable crop nutrition, professional distribution, and long-term partnerships.</p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         BREADCRUMB  (DDS-005 §2)
+         ========================================================== -->
+    <nav class="border-b border-ink/10 bg-white" aria-label="Breadcrumb" data-component="c-breadcrumb">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <ol class="c-breadcrumb">
+          <li><a href="index.html" class="c-breadcrumb__link">Home</a></li>
+          <li aria-hidden="true" class="c-breadcrumb__sep">›</li>
+          <li><span class="c-breadcrumb__current" aria-current="page">About AR Traders</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ==========================================================
+         OUR STORY  (DDS-005 §3 — template Block A)
+         ========================================================== -->
+    <section class="bg-white" data-component="c-block-two-col">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+           <div class="relative flex aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface lg:aspect-[4/5] lg:max-h-[560px]">
+  <img
+    src="assets/img/sections/about-story.webp"
+    alt="AR Traders agricultural distribution operations"
+    class="h-full w-full object-cover object-center"
+    width="1122"
+    height="1402"
+    decoding="async"
+  />
+</div>
+          </div>
+          <div>
+            <p class="c-eyebrow">Our Story</p>
+            <h2 class="c-section-title mt-4">Built on Experience. Focused on the Future.</h2>
+            <div class="mt-6 max-w-xl space-y-5 text-[1.0625rem] leading-relaxed text-ink/70">
+              <p>AR Traders was established in March 2023 with a clear purpose: to build a dependable agricultural inputs business grounded in industry knowledge, trusted relationships, and professional execution.</p>
+              <p>The company was founded by a leader with more than seventeen years of experience in Pakistan's fertilizer industry, bringing practical expertise across sales, distribution, pricing strategy, dealer development, supply chain management, and market intelligence.</p>
+              <p>What began as a fertilizer distribution business has developed into a broader Agricultural Inputs &amp; Supply Chain Company serving Punjab's agricultural markets while expanding into international sourcing, specialty crop nutrition, and sustainable agricultural solutions.</p>
+            </div>
+            <p class="mt-6 max-w-xl border-l-[3px] border-brand pl-5 text-[1.0625rem] font-semibold leading-relaxed text-ink">Our journey is guided by one principle: create lasting value for agriculture through trust, reliability, and responsible growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         WHO WE ARE  (DDS-005 §4 — c-prose)
+         ========================================================== -->
+    <section class="bg-surface" data-component="c-content">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="c-prose mx-auto">
+          <h2>Who We Are</h2>
+          <p>AR Traders operates at the intersection of agriculture, distribution, supply chain management, and international trade.</p>
+          <p>We deliver agricultural inputs through a professionally coordinated network that connects manufacturers and suppliers with dealers, distributors, and farming communities. Our role extends beyond product movement—we create dependable market access, strengthen business relationships, and support long-term growth across the agricultural value chain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         OUR JOURNEY  (DDS-005 §5 — c-timeline)
+         ========================================================== -->
+    <section class="bg-white" data-component="c-block-timeline">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="c-section-title text-center">Our Journey</h2>
+          <ol class="c-timeline mt-12">
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">March 2023</p>
+              <h3 class="c-timeline__title">The Beginning</h3>
+              <p class="c-timeline__body">AR Traders was established in Lahore with a focus on dependable fertilizer distribution and trusted dealer relationships.</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">2024</p>
+              <h3 class="c-timeline__title">Expanding Operations</h3>
+              <p class="c-timeline__body">The company strengthened its market presence, distribution capabilities, and relationships with leading agricultural input suppliers.</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">2025</p>
+              <h3 class="c-timeline__title">International Outlook</h3>
+              <p class="c-timeline__body">AR Traders expanded its focus toward international sourcing, overseas partnerships, and new crop nutrition opportunities.</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">2026</p>
+              <h3 class="c-timeline__title">Building the Next Phase</h3>
+              <p class="c-timeline__body">The company continues to strengthen its supply chain, broaden its product portfolio, and develop sustainable and future-ready agricultural solutions.</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">Looking Ahead</p>
+              <h3 class="c-timeline__title">Beyond Distribution</h3>
+              <p class="c-timeline__body">AR Traders is building toward a future shaped by global collaboration, responsible agriculture, and digital transformation.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PURPOSE, VISION AND MISSION  (DDS-005 §6 — c-card x3)
+         ========================================================== -->
+    <section class="bg-surface" data-component="c-block-cards">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.25" /></svg>
+            </span>
+            <h3 class="c-card__title">Our Purpose</h3>
+            <p class="c-card__body">To strengthen Pakistan's agricultural supply chain by connecting trusted manufacturers, business partners, and farming communities through reliable agricultural inputs and responsible business practices.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" /><circle cx="12" cy="12" r="3" /></svg>
+            </span>
+            <h3 class="c-card__title">Our Vision</h3>
+            <p class="c-card__body">To become one of Pakistan's most trusted Agricultural Inputs &amp; Supply Chain Companies, recognized for reliability, innovation, international partnerships, and long-term value creation.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4" /><path d="M5 4h13l-2.5 4L18 12H5" /></svg>
+            </span>
+            <h3 class="c-card__title">Our Mission</h3>
+            <p class="c-card__body">To provide dependable agricultural inputs through efficient supply chains, trusted partnerships, professional market knowledge, and responsible business practices.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         OUR VALUES  (DDS-005 §7 — c-card x6, 3/2/1 grid)
+         ========================================================== -->
+    <section class="bg-white" data-component="c-block-cards">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="c-section-title">The Values That Guide Us</h2>
+        </div>
+        <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5 11.5 15 15.5 9.5" /><path d="M12 2.5 19.5 5v6c0 4.6-3.1 8.4-7.5 10-4.4-1.6-7.5-5.4-7.5-10V5L12 2.5Z" /></svg>
+            </span>
+            <h3 class="c-card__title">Integrity</h3>
+            <p class="c-card__body">We conduct business with transparency, accountability, and respect for every commitment.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></svg>
+            </span>
+            <h3 class="c-card__title">Reliability</h3>
+            <p class="c-card__body">We focus on dependable execution, consistent service, and trusted supply relationships.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="3.25" /><path d="M2.5 20c.6-3.2 3-5 6-5s5.4 1.8 6 5" /><circle cx="17" cy="9.5" r="2.5" /><path d="M16 15.2c2.7.2 4.8 1.8 5.5 4.8" /></svg>
+            </span>
+            <h3 class="c-card__title">Partnership</h3>
+            <p class="c-card__body">We build long-term relationships based on mutual trust, shared value, and collaboration.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="13" rx="2" /><path d="M9 7.5V5.5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18" /></svg>
+            </span>
+            <h3 class="c-card__title">Professionalism</h3>
+            <p class="c-card__body">We apply disciplined decision-making, responsive communication, and high operating standards.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.8.6 1.5 1.5 1.5 2.6h4c0-1.1.7-2 1.5-2.6A6 6 0 0 0 12 3Z" /></svg>
+            </span>
+            <h3 class="c-card__title">Innovation</h3>
+            <p class="c-card__body">We continuously explore better products, technologies, and agricultural solutions.</p>
+          </article>
+
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11m0 0C12 6.5 9 4 4 4c0 4.5 3 7 8 7Zm0-2c.5-3.5 3-5 7-5 0 3.6-2.6 5.6-7 5" /></svg>
+            </span>
+            <h3 class="c-card__title">Responsible Growth</h3>
+            <p class="c-card__body">We pursue growth that supports business partners, farming communities, and the future of agriculture.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         LEADERSHIP  (DDS-005 §8 — template Block A)
+         ========================================================== -->
+    <section class="bg-surface" data-component="c-block-two-col">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+          <div>
+            <div class="overflow-hidden rounded-2xl">
+    <img
+        src="assets/img/sections/founder-portrait.webp"
+        alt="Muhammad Nabeel Akbar, Founder and Chief Executive Officer of AR Traders"
+        class="h-full w-full object-cover"
+    >
+</div>
+              
+            </div>
+
+          <div>
+            <p class="c-eyebrow">Leadership</p>
+            <h2 class="c-section-title mt-4">Leadership That Understands Agriculture</h2>
+            <p class="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-ink/70">AR Traders is led by professionals with extensive experience in Pakistan's fertilizer and agricultural input industry. The company's leadership combines commercial expertise, market understanding, operational discipline, and a commitment to long-term partnerships.</p>
+
+            <div class="mt-8">
+              <h3 class="text-xl font-bold tracking-tight">Muhammad Nabeel Akbar</h3>
+              <p class="mt-1 text-[0.9375rem] font-semibold text-brand">Founder &amp; Chief Executive Officer</p>
+              <p class="mt-3 text-sm font-medium text-ink/65">MBA — Marketing</p>
+              <p class="mt-1 text-sm font-medium text-ink/65">17+ Years of Leadership in Pakistan's Fertilizer Industry</p>
+            </div>
+
+            <div class="mt-7">
+              <h4 class="c-footer-heading">Areas of Expertise</h4>
+              <ul class="mt-4 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+                <li class="c-check">Sales &amp; Distribution</li>
+                <li class="c-check">Product and Pricing Strategy</li>
+                <li class="c-check">Dealer Network Development</li>
+                <li class="c-check">Agricultural Supply Chain Management</li>
+                <li class="c-check">Market Intelligence</li>
+                <li class="c-check">International Business Development</li>
+                <li class="c-check">Business Growth &amp; Partnerships</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         LOOKING AHEAD  (DDS-005 §9 — centered, concise)
+         ========================================================== -->
+    <section class="bg-white" data-component="c-vision">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="c-eyebrow">Our Direction</p>
+          <h2 class="c-section-title mt-4">Looking Ahead</h2>
+          <p class="c-section-intro">Agriculture continues to evolve, and so does AR Traders.</p>
+          <p class="mt-4 text-[1.0625rem] leading-relaxed text-ink/70">As we strengthen our distribution capabilities, expand international partnerships, introduce innovative crop nutrition products, and embrace digital transformation, our commitment remains unchanged—to build stronger partnerships, create sustainable value, and contribute to the future of Pakistan's agriculture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         RELATED CTA  (DDS-005 §10 — c-cta-banner)
+         ========================================================== -->
+    <section class="bg-brand-deep" data-component="c-cta-banner">
+      <div class="mx-auto max-w-site px-6 py-20 lg:px-10 lg:py-24">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="c-section-title c-section-title--light">Let's Build the Future Together</h2>
+          <p class="c-section-intro c-section-intro--light">Whether you are a manufacturer, supplier, dealer, distributor, or strategic partner, AR Traders welcomes the opportunity to explore long-term business collaboration.</p>
+          <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+            <a href="global-partnerships.html" class="c-btn c-btn--inverse justify-center">Partner With Us</a>
+            <a href="contact.html" class="c-btn c-btn--ghost justify-center">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       COMPONENT: SITE FOOTER  [c-footer]  (DDS-003 §7)
+       Four columns + bottom bar. Reused on every page (Option A).
+       ============================================================ -->
+  <footer class="bg-white" data-component="c-footer">
+    <div class="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10 lg:pt-20">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr] lg:gap-12">
+
+        <!-- Column 1: Company -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-extrabold text-white">AR</span>
+            <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+          </a>
+          <p class="mt-4 text-sm font-semibold text-ink/80">Agricultural Inputs &amp; Supply Chain Company</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-ink/60">Reliable Crop Nutrition for Pakistan's Farming Heartland</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <nav aria-label="Footer — Quick links">
+          <h3 class="c-footer-heading">Quick Links</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="index.html" class="c-footer-link">Home</a></li>
+            <li><a href="about.html" class="c-footer-link">About</a></li>
+            <li><a href="solutions.html" class="c-footer-link">Our Solutions</a></li>
+            <li><a href="global-partnerships.html" class="c-footer-link">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-footer-link">Distribution Network</a></li>
+            <li><a href="contact.html" class="c-footer-link">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: Solutions -->
+        <nav aria-label="Footer — Solutions">
+          <h3 class="c-footer-heading">Solutions</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="solutions-nitrogen.html" class="c-footer-link">Nitrogen Solutions</a></li>
+            <li><a href="solutions-phosphate.html" class="c-footer-link">Phosphate Solutions</a></li>
+            <li><a href="solutions-potassium.html" class="c-footer-link">Potassium Solutions</a></li>
+            <li><a href="solutions-secondary-nutrients.html" class="c-footer-link">Secondary Nutrient Solutions</a></li>
+            <li><a href="solutions-micronutrients.html" class="c-footer-link">Micronutrient Solutions</a></li>
+            <li><a href="advanced-crop-nutrition.html" class="c-footer-link">Advanced Crop Nutrition</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h3 class="c-footer-heading">Contact</h3>
+          <address class="mt-4 space-y-2.5 not-italic">
+            <p class="text-sm leading-relaxed text-ink/60">1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+            <p><a href="tel:+924237898519" class="c-footer-link">+92 42 3789 8519</a></p>
+            <p class="text-sm text-ink/60">+92 320 888 9070–76</p>
+            <p><a href="mailto:info@artraders.net.pk" class="c-footer-link">info@artraders.net.pk</a></p>
+            <p><a href="https://www.artraders.net.pk" class="c-footer-link">www.artraders.net.pk</a></p>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row">
+        <p class="text-sm text-ink/55">Copyright &copy; AR Traders</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="c-footer-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="c-footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

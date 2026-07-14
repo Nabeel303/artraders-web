@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use | AR Traders</title>
+  <meta name="description" content="Read the terms governing use of the AR Traders website, including intellectual property, product information, disclaimers, and governing law." />
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="https://www.artraders.net.pk/terms-of-use.html" />
+
+<meta name="theme-color" content="#006B3F" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Terms of Use | AR Traders" />
+<meta property="og:description" content="Review the terms governing access to and use of the AR Traders corporate website." />
+<meta property="og:url" content="https://www.artraders.net.pk/terms-of-use.html" />
+<meta property="og:site_name" content="AR Traders" />
+<meta property="og:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Terms of Use | AR Traders" />
+<meta name="twitter:description" content="Review the terms governing access to and use of the AR Traders corporate website." />
+<meta name="twitter:image" content="https://www.artraders.net.pk/assets/img/og-image.jpg" />
+
+  <!-- ============================================================
+       DESIGN SYSTEM — FONTS
+       Display + body: Manrope (per DDS-001)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       TAILWIND CSS (Play CDN — V1 only, see Developer Notes)
+       ============================================================ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* ----------------------------------------------------------
+       DESIGN SYSTEM — TOKENS (single source of truth)
+       Colors, fonts and spacing defined once, reused everywhere.
+       ---------------------------------------------------------- */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:       '#006B3F',  /* Primary Green           */
+            'brand-deep':'#004D2E',  /* Dark green sections     */
+            surface:     '#F7F8F9',  /* Light Grey              */
+            ink:         '#2D3436',  /* Dark Charcoal           */
+            gold:        '#C9A227'   /* Accent Gold             */
+          },
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          maxWidth: {
+            site: '80rem'         /* 1280px content width */
+          },
+          transitionDuration: {
+            250: '250ms'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Project styles (small; utilities cover almost everything) -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <!-- ============================================================
+       COMPONENT: SITE HEADER  [c-header]
+       Sticky. Transparent over Hero → white after scroll (250ms).
+       Scroll state is toggled by main.js via .is-scrolled
+       ============================================================ -->
+  <header id="site-header"
+          class="fixed inset-x-0 top-0 z-50 transition-colors duration-250 bg-transparent"
+          data-solid
+          data-component="c-header">
+    <div class="mx-auto max-w-site px-6 lg:px-10">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <!-- Logo mark placeholder (replace with SVG logo asset) -->
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold tracking-tight">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+
+        <!-- Desktop menu (true-centered) -->
+        <nav class="absolute left-1/2 hidden -translate-x-1/2 xl:block" aria-label="Primary">
+          <ul class="flex items-center gap-8 text-[15px] font-medium">
+            <li><a href="index.html"                class="c-navlink">Home</a></li>
+            <li><a href="about.html"                class="c-navlink">About</a></li>
+            <li><a href="solutions.html"            class="c-navlink">Our Solutions</a></li>
+            <li><a href="global-partnerships.html"  class="c-navlink">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-navlink">Distribution Network</a></li>
+            <li><a href="contact.html"              class="c-navlink">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden xl:block">
+          <a href="contact.html" class="c-btn c-btn--primary">Request a Quote</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-open"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg xl:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       COMPONENT: MOBILE MENU  [c-mobile-menu]
+       Fullscreen slide-in panel. CTA pinned to bottom.
+       ============================================================ -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-[60] translate-x-full bg-white transition-transform duration-250 xl:hidden"
+       role="dialog" aria-modal="true" aria-label="Menu" inert
+       data-component="c-mobile-menu">
+    <div class="flex h-full flex-col px-6 pb-8 pt-0">
+
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+        <button id="menu-close"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex-1 overflow-y-auto" aria-label="Primary mobile">
+        <ul class="space-y-1 text-xl font-semibold">
+          <li><a href="index.html"                class="c-mobile-link">Home</a></li>
+          <li><a href="about.html"                class="c-mobile-link">About</a></li>
+          <li><a href="solutions.html"            class="c-mobile-link">Our Solutions</a></li>
+          <li><a href="global-partnerships.html"  class="c-mobile-link">Global Partnerships</a></li>
+          <li><a href="distribution-network.html" class="c-mobile-link">Distribution Network</a></li>
+          <li><a href="contact.html"              class="c-mobile-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA pinned at bottom per DDS -->
+      <a href="contact.html" class="c-btn c-btn--primary w-full justify-center text-base">Request a Quote</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="c-page-hero" data-component="c-page-hero"
+             style="background-image: url('assets/img/about-hero.webp')">
+      <div class="c-page-hero__overlay" aria-hidden="true"></div>
+      <div class="relative mx-auto flex min-h-[35vh] max-w-site flex-col justify-center px-6 pb-14 pt-32 md:min-h-[40vh] lg:min-h-[45vh] lg:px-10 lg:pb-16">
+        <p class="c-eyebrow c-eyebrow--gold">Website Terms</p>
+        <h1 class="mt-3 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl">Terms of Use</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">The conditions governing access to and use of the AR Traders corporate website and its content.</p>
+      </div>
+    </section>
+
+    <nav class="border-b border-ink/10 bg-white" aria-label="Breadcrumb" data-component="c-breadcrumb">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <ol class="c-breadcrumb">
+          <li><a href="index.html" class="c-breadcrumb__link">Home</a></li>
+          <li aria-hidden="true" class="c-breadcrumb__sep">›</li>
+          <li><span class="c-breadcrumb__current" aria-current="page">Terms of Use</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="bg-white">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-24">
+        <article class="mx-auto max-w-4xl">
+          <div class="mb-10 rounded-2xl border border-ink/10 bg-surface p-6 sm:p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand">Effective date</p>
+            <p class="mt-2 text-lg font-semibold text-ink">14 July 2026</p>
+          </div>
+          <div class="c-prose max-w-none">
+            
+<h2>1. Acceptance of These Terms</h2>
+<p>These Terms of Use govern access to and use of the official AR Traders website at <strong>www.artraders.net.pk</strong>. By accessing or using the website, you agree to these Terms of Use. If you do not agree, please discontinue use of the website.</p>
+
+<h2>2. Website Purpose</h2>
+<p>This website provides general corporate and business information about AR Traders, including information relating to agricultural inputs, fertilizer distribution, supply chain activities, international sourcing, distribution coverage, and business partnerships.</p>
+<p>The website does not itself constitute a binding commercial offer, product warranty, distributorship appointment, agency relationship, quotation, or contract.</p>
+
+<h2>3. Permitted Use</h2>
+<p>You may use this website only for lawful, legitimate, and informational purposes. You must not:</p>
+<ul>
+  <li>Use the website in a way that violates applicable law or the rights of another person</li>
+  <li>Attempt to gain unauthorized access to the website, server, systems, or data</li>
+  <li>Introduce malware, malicious code, automated attacks, or disruptive technology</li>
+  <li>Scrape, copy, reproduce, or systematically extract website content without permission</li>
+  <li>Misrepresent your identity, authority, affiliation, or business purpose</li>
+  <li>Use website content in a misleading, defamatory, unlawful, or commercially unauthorized manner</li>
+</ul>
+
+<h2>4. Intellectual Property</h2>
+<p>Unless otherwise stated, the website and its content—including text, design, layout, photographs, graphics, maps, logos, icons, branding, and other materials—are owned by or licensed to AR Traders and are protected by applicable intellectual property laws.</p>
+<p>You may view and print limited website content for your own legitimate internal business reference. No content may be copied, modified, republished, distributed, sold, licensed, displayed, or commercially exploited without prior written permission from AR Traders.</p>
+
+<h2>5. Product and Service Information</h2>
+<p>Product descriptions, images, technical details, packaging references, availability, specifications, nutrient information, and other website content are provided for general guidance only. Actual products may differ due to manufacturer changes, batch variations, packaging updates, regulatory requirements, availability, or specific commercial arrangements.</p>
+<p>Product availability, pricing, credit terms, delivery schedules, territories, quantities, and specifications are confirmed only through an authorized written quotation, purchase order, invoice, agreement, or other formal communication issued or accepted by AR Traders.</p>
+
+<h2>6. Agricultural and Agronomic Disclaimer</h2>
+<p>Any crop nutrition, soil health, fertilizer, or agricultural information appearing on this website is general in nature and is not a substitute for site-specific professional advice.</p>
+<p>Product selection, dosage, timing, application method, and expected results may depend on soil analysis, crop type, crop stage, climate, irrigation, local conditions, label directions, manufacturer recommendations, and applicable regulations. Users should consult a qualified agronomist or agricultural professional before making application or crop-management decisions.</p>
+
+<h2>7. Business Enquiries and Communications</h2>
+<p>Submitting an enquiry, email, form, proposal, expression of interest, or other communication does not create a contract, partnership, agency, exclusivity arrangement, distributorship, employment relationship, or other binding obligation.</p>
+<p>A binding business relationship arises only when the relevant terms have been formally agreed by authorized representatives in writing.</p>
+
+<h2>8. Third-Party Products, Names, and Links</h2>
+<p>References to third-party products, manufacturers, trademarks, websites, or services are provided for informational or business-context purposes. Unless expressly stated, such references do not imply ownership, endorsement, agency, or an exclusive relationship.</p>
+<p>AR Traders does not control third-party websites and is not responsible for their content, security, availability, privacy practices, or terms.</p>
+
+<h2>9. Accuracy and Updates</h2>
+<p>We aim to keep website information accurate and current, but we do not warrant that all content is complete, error-free, current, or suitable for every purpose. AR Traders may modify, remove, or update website content at any time without notice.</p>
+
+<h2>10. Website Availability and Security</h2>
+<p>We do not guarantee uninterrupted, error-free, or secure access to the website. Access may be suspended or restricted for maintenance, upgrades, security reasons, technical problems, or circumstances beyond our control.</p>
+
+<h2>11. Disclaimer of Warranties</h2>
+<p>To the fullest extent permitted by applicable law, the website and its content are provided on an “as is” and “as available” basis. AR Traders disclaims warranties or representations, whether express or implied, regarding accuracy, reliability, availability, suitability, merchantability, fitness for a particular purpose, or non-infringement.</p>
+
+<h2>12. Limitation of Liability</h2>
+<p>To the fullest extent permitted by applicable law, AR Traders and its owners, officers, employees, representatives, and service providers will not be liable for any indirect, incidental, special, consequential, punitive, or similar loss arising from or related to:</p>
+<ul>
+  <li>Use of or inability to use the website</li>
+  <li>Reliance on website content</li>
+  <li>Loss of data, revenue, profit, opportunity, goodwill, or business</li>
+  <li>Website interruption, technical failure, security incident, or third-party service</li>
+  <li>Any third-party website, product, or service referenced through the website</li>
+</ul>
+<p>Nothing in these Terms excludes liability that cannot lawfully be excluded or limited.</p>
+
+<h2>13. Indemnity</h2>
+<p>You agree to be responsible for loss, damage, cost, or claim arising from your unlawful misuse of the website, your breach of these Terms, or your infringement of the rights of another person, to the extent permitted by applicable law.</p>
+
+<h2>14. Governing Law and Jurisdiction</h2>
+<p>These Terms of Use are governed by the laws of the Islamic Republic of Pakistan. Subject to any mandatory legal requirements, disputes arising from these Terms or use of the website will be submitted to the competent courts of Lahore, Pakistan.</p>
+
+<h2>15. Changes to These Terms</h2>
+<p>AR Traders may revise these Terms of Use from time to time. The updated version will be posted on this page with a revised effective date. Continued use of the website after an update constitutes acceptance of the revised Terms.</p>
+
+<h2>16. Severability and Waiver</h2>
+<p>If any provision of these Terms is found invalid or unenforceable, the remaining provisions will continue in effect. A failure by AR Traders to enforce a provision does not constitute a waiver of that provision or any other right.</p>
+
+          </div>
+          <div class="mt-12 rounded-2xl border border-brand/15 bg-brand/5 p-6 sm:p-8">
+            <h2 class="text-2xl font-bold tracking-tight text-ink">Contact AR Traders</h2>
+            <p class="mt-3 leading-relaxed text-ink/70">Questions about this page may be sent to:</p>
+            <address class="mt-4 space-y-2 not-italic text-ink/75">
+              <p><strong>AR Traders</strong></p>
+              <p>1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+              <p>Email: <a class="font-semibold text-brand hover:underline" href="mailto:info@artraders.net.pk">info@artraders.net.pk</a></p>
+              <p>Website: <a class="font-semibold text-brand hover:underline" href="https://www.artraders.net.pk">www.artraders.net.pk</a></p>
+            </address>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       COMPONENT: SITE FOOTER  [c-footer]  (DDS-003 §7)
+       Four columns + bottom bar. Reused on every page (Option A).
+       ============================================================ -->
+  <footer class="bg-white" data-component="c-footer">
+    <div class="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10 lg:pt-20">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr] lg:gap-12">
+
+        <!-- Column 1: Company -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-extrabold text-white">AR</span>
+            <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+          </a>
+          <p class="mt-4 text-sm font-semibold text-ink/80">Agricultural Inputs &amp; Supply Chain Company</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-ink/60">Reliable Crop Nutrition for Pakistan's Farming Heartland</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <nav aria-label="Footer — Quick links">
+          <h3 class="c-footer-heading">Quick Links</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="index.html" class="c-footer-link">Home</a></li>
+            <li><a href="about.html" class="c-footer-link">About</a></li>
+            <li><a href="solutions.html" class="c-footer-link">Our Solutions</a></li>
+            <li><a href="global-partnerships.html" class="c-footer-link">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-footer-link">Distribution Network</a></li>
+            <li><a href="contact.html" class="c-footer-link">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: Solutions -->
+        <nav aria-label="Footer — Solutions">
+          <h3 class="c-footer-heading">Solutions</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="solutions-nitrogen.html" class="c-footer-link">Nitrogen Solutions</a></li>
+            <li><a href="solutions-phosphate.html" class="c-footer-link">Phosphate Solutions</a></li>
+            <li><a href="solutions-potassium.html" class="c-footer-link">Potassium Solutions</a></li>
+            <li><a href="solutions-secondary-nutrients.html" class="c-footer-link">Secondary Nutrient Solutions</a></li>
+            <li><a href="solutions-micronutrients.html" class="c-footer-link">Micronutrient Solutions</a></li>
+            <li><a href="advanced-crop-nutrition.html" class="c-footer-link">Advanced Crop Nutrition</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h3 class="c-footer-heading">Contact</h3>
+          <address class="mt-4 space-y-2.5 not-italic">
+            <p class="text-sm leading-relaxed text-ink/60">1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+            <p><a href="tel:+924237898519" class="c-footer-link">+92 42 3789 8519</a></p>
+            <p class="text-sm text-ink/60">+92 320 888 9070–76</p>
+            <p><a href="mailto:info@artraders.net.pk" class="c-footer-link">info@artraders.net.pk</a></p>
+            <p><a href="https://www.artraders.net.pk" class="c-footer-link">www.artraders.net.pk</a></p>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row">
+        <p class="text-sm text-ink/55">Copyright &copy; AR Traders</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="c-footer-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="c-footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

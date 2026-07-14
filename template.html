@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Page Title] — AR Traders</title>
+  <meta name="description" content="[Page description — 150 to 160 characters]" />
+
+  <!-- ============================================================
+       DESIGN SYSTEM — FONTS
+       Display + body: Manrope (per DDS-001)
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       TAILWIND CSS (Play CDN — V1 only, see Developer Notes)
+       ============================================================ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* ----------------------------------------------------------
+       DESIGN SYSTEM — TOKENS (single source of truth)
+       Colors, fonts and spacing defined once, reused everywhere.
+       ---------------------------------------------------------- */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:       '#006B3F',  /* Primary Green           */
+            'brand-deep':'#004D2E',  /* Dark green sections     */
+            surface:     '#F7F8F9',  /* Light Grey              */
+            ink:         '#2D3436',  /* Dark Charcoal           */
+            gold:        '#C9A227'   /* Accent Gold             */
+          },
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          maxWidth: {
+            site: '80rem'         /* 1280px content width */
+          },
+          transitionDuration: {
+            250: '250ms'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Project styles (small; utilities cover almost everything) -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <!-- ============================================================
+       COMPONENT: SITE HEADER  [c-header]
+       Sticky. Transparent over Hero → white after scroll (250ms).
+       Scroll state is toggled by main.js via .is-scrolled
+       ============================================================ -->
+  <header id="site-header"
+          class="fixed inset-x-0 top-0 z-50 transition-colors duration-250 bg-transparent"
+          data-solid
+          data-component="c-header">
+    <div class="mx-auto max-w-site px-6 lg:px-10">
+      <div class="relative flex h-20 items-center justify-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <!-- Logo mark placeholder (replace with SVG logo asset) -->
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold tracking-tight">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+
+        <!-- Desktop menu (true-centered) -->
+        <nav class="absolute left-1/2 hidden -translate-x-1/2 xl:block" aria-label="Primary">
+          <ul class="flex items-center gap-8 text-[15px] font-medium">
+            <li><a href="index.html"                class="c-navlink">Home</a></li>
+            <li><a href="about.html"                class="c-navlink">About</a></li>
+            <li><a href="solutions.html"            class="c-navlink">Our Solutions</a></li>
+            <li><a href="global-partnerships.html"  class="c-navlink">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-navlink">Distribution Network</a></li>
+            <li><a href="contact.html"              class="c-navlink">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden xl:block">
+          <a href="contact.html" class="c-btn c-btn--primary">Request a Quote</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-open"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg xl:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       COMPONENT: MOBILE MENU  [c-mobile-menu]
+       Fullscreen slide-in panel. CTA pinned to bottom.
+       ============================================================ -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-[60] translate-x-full bg-white transition-transform duration-250 xl:hidden"
+       role="dialog" aria-modal="true" aria-label="Menu" inert
+       data-component="c-mobile-menu">
+    <div class="flex h-full flex-col px-6 pb-8 pt-0">
+
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white text-sm font-extrabold">AR</span>
+          <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+        </a>
+        <button id="menu-close"
+                class="inline-flex h-11 w-11 items-center justify-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 flex-1 overflow-y-auto" aria-label="Primary mobile">
+        <ul class="space-y-1 text-xl font-semibold">
+          <li><a href="index.html"                class="c-mobile-link">Home</a></li>
+          <li><a href="about.html"                class="c-mobile-link">About</a></li>
+          <li><a href="solutions.html"            class="c-mobile-link">Our Solutions</a></li>
+          <li><a href="global-partnerships.html"  class="c-mobile-link">Global Partnerships</a></li>
+          <li><a href="distribution-network.html" class="c-mobile-link">Distribution Network</a></li>
+          <li><a href="contact.html"              class="c-mobile-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA pinned at bottom per DDS -->
+      <a href="contact.html" class="c-btn c-btn--primary w-full justify-center text-base">Request a Quote</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ==========================================================
+         COMPONENT: PAGE HERO  [c-page-hero]  (DDS-004 §1)
+         Full-width image + dark overlay. 45vh / 40vh / 35vh.
+         Replace the eyebrow, title, paragraph and (optional) CTA.
+         ========================================================== -->
+    <section class="c-page-hero" data-component="c-page-hero"
+             style="background-image: url('assets/img/page-hero-placeholder.jpg')">
+      <div class="c-page-hero__overlay" aria-hidden="true"></div>
+      <div class="relative mx-auto flex min-h-[35vh] max-w-site flex-col justify-center px-6 pb-14 pt-32 md:min-h-[40vh] lg:min-h-[45vh] lg:px-10 lg:pb-16">
+        <p class="c-eyebrow c-eyebrow--gold">[Page Category]</p>
+        <h1 class="mt-3 max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl">[Dynamic Page Title]</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">[Supporting paragraph — approximately two to three lines introducing the purpose of this page in clear, professional language.]</p>
+        <!-- OPTIONAL hero CTA — delete if not needed
+        <div class="mt-8">
+          <a href="#" class="c-btn c-btn--inverse">[Optional CTA]</a>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         COMPONENT: BREADCRUMB  [c-breadcrumb]  (DDS-004 §2)
+         ========================================================== -->
+    <nav class="border-b border-ink/10 bg-white" aria-label="Breadcrumb" data-component="c-breadcrumb">
+      <div class="mx-auto max-w-site px-6 lg:px-10">
+        <ol class="c-breadcrumb">
+          <li><a href="index.html" class="c-breadcrumb__link">Home</a></li>
+          <li aria-hidden="true" class="c-breadcrumb__sep">›</li>
+          <li><span class="c-breadcrumb__current" aria-current="page">[Current Page]</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ==========================================================
+         COMPONENT: MAIN CONTENT  [c-prose]  (DDS-004 §3)
+         Long-form content column, max-width 900px.
+         Everything inside .c-prose is styled automatically:
+         h2, h3, p, ul, ol, blockquote, table, img/figure.
+         ========================================================== -->
+    <section class="bg-white" data-component="c-content">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="c-prose mx-auto">
+
+          <h2>[Section Heading — H2]</h2>
+          <p>[Placeholder paragraph. Replace with approved page copy. The prose column is limited to 900px for comfortable long-form reading, with a relaxed line height and consistent vertical rhythm between elements.]</p>
+          <p>[Second placeholder paragraph demonstrating paragraph spacing within the prose column.]</p>
+
+          <h3>[Subsection Heading — H3]</h3>
+          <p>[Placeholder paragraph introducing a list:]</p>
+          <ul>
+            <li>[Unordered list item one]</li>
+            <li>[Unordered list item two]</li>
+            <li>[Unordered list item three]</li>
+          </ul>
+          <ol>
+            <li>[Ordered list item one]</li>
+            <li>[Ordered list item two]</li>
+          </ol>
+
+          <blockquote>
+            <p>[Quotation placeholder — a short statement styled for emphasis within long-form content.]</p>
+          </blockquote>
+
+          <table>
+            <thead>
+              <tr><th>[Column A]</th><th>[Column B]</th><th>[Column C]</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>[Row 1]</td><td>[Value]</td><td>[Value]</td></tr>
+              <tr><td>[Row 2]</td><td>[Value]</td><td>[Value]</td></tr>
+            </tbody>
+          </table>
+
+          <figure>
+            <div class="flex aspect-[16/9] w-full items-center justify-center rounded-2xl bg-surface text-sm font-medium text-ink/40">[Inline image placeholder]</div>
+            <figcaption>[Image caption placeholder]</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         OPTIONAL CONTENT BLOCKS  (DDS-004 §4)
+         Copy the block you need into the page, replace the
+         placeholders, delete unused blocks. All blocks reuse the
+         master design system — do not restyle them per page.
+         ========================================================== -->
+
+    <!-- OPTIONAL BLOCK A — Two-column image/content (reuses c-about pattern) -->
+    <section class="bg-surface" data-component="c-block-two-col">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <div class="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-white text-sm font-medium text-ink/40" role="img" aria-label="[Image description]">[Image placeholder]</div>
+          </div>
+          <div>
+            <p class="c-eyebrow">[Eyebrow]</p>
+            <h2 class="c-section-title mt-4">[Block Heading]</h2>
+            <p class="mt-5 max-w-xl text-[1.0625rem] leading-relaxed text-ink/70">[Supporting copy placeholder for the two-column layout.]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK B — Three-column cards (reuses c-card) -->
+    <section class="bg-white" data-component="c-block-cards">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="c-section-title">[Cards Heading]</h2>
+        </div>
+        <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8" /></svg></span>
+            <h3 class="c-card__title">[Card Title]</h3>
+            <p class="c-card__body">[Card description placeholder.]</p>
+          </article>
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8" /></svg></span>
+            <h3 class="c-card__title">[Card Title]</h3>
+            <p class="c-card__body">[Card description placeholder.]</p>
+          </article>
+          <article class="c-card">
+            <span class="c-icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8" /></svg></span>
+            <h3 class="c-card__title">[Card Title]</h3>
+            <p class="c-card__body">[Card description placeholder.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK C — Four statistics (reuses c-stat-card) -->
+    <section class="bg-surface" data-component="c-block-stats">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div class="c-stat-card"><p class="c-stat-card__value">[00]</p><p class="c-stat-card__label">[Stat label]</p></div>
+          <div class="c-stat-card"><p class="c-stat-card__value">[00]</p><p class="c-stat-card__label">[Stat label]</p></div>
+          <div class="c-stat-card"><p class="c-stat-card__value">[00]</p><p class="c-stat-card__label">[Stat label]</p></div>
+          <div class="c-stat-card"><p class="c-stat-card__value">[00]</p><p class="c-stat-card__label">[Stat label]</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK D — Timeline [c-timeline] -->
+    <section class="bg-white" data-component="c-block-timeline">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="c-section-title text-center">[Timeline Heading]</h2>
+          <ol class="c-timeline mt-12">
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">[Year]</p>
+              <h3 class="c-timeline__title">[Milestone title]</h3>
+              <p class="c-timeline__body">[Milestone description placeholder.]</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">[Year]</p>
+              <h3 class="c-timeline__title">[Milestone title]</h3>
+              <p class="c-timeline__body">[Milestone description placeholder.]</p>
+            </li>
+            <li class="c-timeline__item">
+              <p class="c-timeline__marker">[Year]</p>
+              <h3 class="c-timeline__title">[Milestone title]</h3>
+              <p class="c-timeline__body">[Milestone description placeholder.]</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK E — Icon list (reuses c-pillar / c-check) -->
+    <section class="bg-surface" data-component="c-block-icon-list">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="c-section-title">[Icon List Heading]</h2>
+          <div class="mt-8 space-y-4">
+            <div class="c-pillar">
+              <span class="c-icon-tile c-icon-tile--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8" /></svg></span>
+              <span class="c-pillar__label">[Icon list item]</span>
+            </div>
+            <div class="c-pillar">
+              <span class="c-icon-tile c-icon-tile--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8" /></svg></span>
+              <span class="c-pillar__label">[Icon list item]</span>
+            </div>
+          </div>
+          <!-- Compact alternative: checklist style
+          <ul class="mt-8 space-y-3">
+            <li class="c-check">[Checklist item]</li>
+            <li class="c-check">[Checklist item]</li>
+          </ul>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK F — Quote block [c-quote] -->
+    <section class="bg-white" data-component="c-block-quote">
+      <div class="mx-auto max-w-site px-6 py-16 lg:px-10 lg:py-20">
+        <figure class="c-quote mx-auto">
+          <blockquote>
+            <p>[Featured quotation placeholder — a standalone statement given visual emphasis between content sections.]</p>
+          </blockquote>
+          <figcaption>[Attribution placeholder]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- OPTIONAL BLOCK G — Callout box [c-callout] -->
+    <section class="bg-white" data-component="c-block-callout">
+      <div class="mx-auto max-w-site px-6 pb-16 lg:px-10 lg:pb-20">
+        <div class="c-callout mx-auto">
+          <h3 class="c-callout__title">[Callout heading]</h3>
+          <p class="c-callout__body">[Callout body placeholder — supporting information, a note, or a highlighted detail that deserves attention without being a CTA.]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         COMPONENT: RELATED CTA  (DDS-004 §5 — reuses c-cta-banner)
+         ========================================================== -->
+    <section class="bg-brand-deep" data-component="c-cta-banner">
+      <div class="mx-auto max-w-site px-6 py-20 lg:px-10 lg:py-24">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="c-section-title c-section-title--light">[Related CTA Heading]</h2>
+          <p class="c-section-intro c-section-intro--light">[CTA supporting copy placeholder.]</p>
+          <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+            <a href="#" class="c-btn c-btn--inverse justify-center">[Primary Button]</a>
+            <a href="#" class="c-btn c-btn--ghost justify-center">[Secondary Button]</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       COMPONENT: SITE FOOTER  [c-footer]  (DDS-003 §7)
+       Four columns + bottom bar. Reused on every page (Option A).
+       ============================================================ -->
+  <footer class="bg-white" data-component="c-footer">
+    <div class="mx-auto max-w-site px-6 pb-10 pt-16 lg:px-10 lg:pt-20">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr] lg:gap-12">
+
+        <!-- Column 1: Company -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2.5" aria-label="AR Traders — Home">
+            <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-sm font-extrabold text-white">AR</span>
+            <span class="text-lg font-bold tracking-tight">AR&nbsp;Traders</span>
+          </a>
+          <p class="mt-4 text-sm font-semibold text-ink/80">Agricultural Inputs &amp; Supply Chain Company</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-ink/60">Reliable Crop Nutrition for Pakistan's Farming Heartland</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <nav aria-label="Footer — Quick links">
+          <h3 class="c-footer-heading">Quick Links</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="index.html" class="c-footer-link">Home</a></li>
+            <li><a href="about.html" class="c-footer-link">About</a></li>
+            <li><a href="solutions.html" class="c-footer-link">Our Solutions</a></li>
+            <li><a href="global-partnerships.html" class="c-footer-link">Global Partnerships</a></li>
+            <li><a href="distribution-network.html" class="c-footer-link">Distribution Network</a></li>
+            <li><a href="contact.html" class="c-footer-link">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: Solutions -->
+        <nav aria-label="Footer — Solutions">
+          <h3 class="c-footer-heading">Solutions</h3>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="solutions-nitrogen.html" class="c-footer-link">Nitrogen Solutions</a></li>
+            <li><a href="solutions-phosphate.html" class="c-footer-link">Phosphate Solutions</a></li>
+            <li><a href="solutions-potassium.html" class="c-footer-link">Potassium Solutions</a></li>
+            <li><a href="solutions-secondary-nutrients.html" class="c-footer-link">Secondary Nutrient Solutions</a></li>
+            <li><a href="solutions-micronutrients.html" class="c-footer-link">Micronutrient Solutions</a></li>
+            <li><a href="advanced-crop-nutrition.html" class="c-footer-link">Advanced Crop Nutrition</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h3 class="c-footer-heading">Contact</h3>
+          <address class="mt-4 space-y-2.5 not-italic">
+            <p class="text-sm leading-relaxed text-ink/60">1st Floor, Plaza No. 104-A, Sector-C Commercial, Bahria Town, Lahore, Pakistan</p>
+            <p><a href="tel:+924237898519" class="c-footer-link">+92 42 3789 8519</a></p>
+            <p class="text-sm text-ink/60">+92 320 888 9070–76</p>
+            <p><a href="mailto:info@artraders.net.pk" class="c-footer-link">info@artraders.net.pk</a></p>
+            <p><a href="https://www.artraders.net.pk" class="c-footer-link">www.artraders.net.pk</a></p>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row">
+        <p class="text-sm text-ink/55">Copyright &copy; AR Traders</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="c-footer-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="c-footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -61,19 +61,4 @@
     <priority>0.8</priority>
   </url>
 
-<url>
-    <loc>https://www.artraders.net.pk/privacy-policy.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-</url>
-
-<url>
-    <loc>https://www.artraders.net.pk/terms-of-use.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
-
-</url>
-
 </urlset>
